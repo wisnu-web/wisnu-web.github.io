@@ -1,2 +1,2 @@
-# wisnurifki.github.io
+# wisnu-web.github.io
 WISNU - Personal Portfolio Website
