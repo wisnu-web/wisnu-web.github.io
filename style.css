@@ -1,0 +1,875 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080b14;
+    color: white;
+}
+
+/* NAVBAR */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(8, 11, 20, 0.7);
+    backdrop-filter: blur(15px);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00e5ff;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00e5ff;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 20% 30%, #003b4d 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #171044 0%, transparent 30%),
+        #080b14;
+}
+
+.hero h1 {
+    font-size: 100px;
+    letter-spacing: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #00e5ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+    color: #aaa;
+    margin: 15px 0;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    color: #888;
+    line-height: 1.8;
+}
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    background: #00e5ff;
+    color: #080b14;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px #00e5ff55;
+}
+
+/* SECTION */
+
+section {
+    padding: 100px 8%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.title span {
+    color: #00e5ff;
+}
+
+/* CARD */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    padding: 30px;
+
+    background: #0d111c;
+
+    border: 1px solid #1c2333;
+
+    border-radius: 20px;
+
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 10px 40px #00e5ff22;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #00e5ff;
+}
+
+.card p {
+    color: #888;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: #666;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==========================================
+   EXTRA EFFECTS
+========================================== */
+
+
+/* PARTICLE BACKGROUND */
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* CURSOR GLOW */
+
+.cursor-glow {
+
+    position: fixed;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 229, 255, 0.12),
+            transparent 70%
+        );
+
+    z-index: 9999;
+
+    transition:
+        left 0.08s linear,
+        top 0.08s linear;
+}
+
+
+/* NAVBAR SAAT SCROLL */
+
+nav.scrolled {
+
+    background:
+        rgba(5, 8, 15, 0.95);
+
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.4);
+
+}
+
+
+/* SCROLL ANIMATION */
+
+.hidden {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        all 0.8s ease;
+
+}
+
+.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* LIGHT MODE */
+
+body.light-mode {
+
+    background: #f4f7fb;
+
+    color: #111827;
+
+}
+
+body.light-mode nav {
+
+    background:
+        rgba(255, 255, 255, 0.85);
+
+}
+
+body.light-mode
+.nav-links a {
+
+    color: #333;
+
+}
+
+body.light-mode
+.hero {
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            #d9faff,
+            transparent 30%
+        ),
+        #f4f7fb;
+
+}
+
+body.light-mode
+.hero h2 {
+
+    color: #555;
+
+}
+
+body.light-mode
+.hero p {
+
+    color: #666;
+
+}
+
+body.light-mode
+.card,
+body.light-mode
+.about-box,
+body.light-mode
+.project {
+
+    background: white;
+
+    border-color: #ddd;
+
+}
+
+body.light-mode
+.card p,
+body.light-mode
+.project-content p {
+
+    color: #666;
+
+}
+
+
+/* MOBILE MENU */
+
+.menu-button {
+
+    display: none;
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .menu-button {
+
+        display: block;
+
+    }
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 70px;
+
+        right: 20px;
+
+        width: 200px;
+
+        padding: 20px;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        background:
+            rgba(8, 11, 20, 0.95);
+
+        border:
+            1px solid #222;
+
+        border-radius: 15px;
+
+    }
+
+    .nav-links.active {
+
+        display: flex;
+
+    }
+
+    .cursor-glow {
+
+        display: none;
+
+    }
+/* =========================================
+   FUTURISTIC HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 120px 8% 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.hero-text {
+    max-width: 650px;
+    z-index: 2;
+    animation: heroText 1s ease forwards;
+}
+
+.hero-small {
+    color: #00f7ff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: clamp(70px, 10vw, 130px);
+    line-height: 0.95;
+    margin: 0;
+    letter-spacing: -5px;
+}
+
+.gradient-text {
+    background: linear-gradient(
+        90deg,
+        #00f7ff,
+        #008cff,
+        #9d00ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+.hero-text h2 {
+    min-height: 45px;
+    margin-top: 20px;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.hero-description {
+    max-width: 550px;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #aeb7c4;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    background: linear-gradient(
+        90deg,
+        #00f7ff,
+        #008cff
+    );
+
+    color: #001018;
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.35);
+}
+
+.primary-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0, 247, 255, 0.65);
+}
+
+.secondary-btn {
+    border: 1px solid rgba(0, 247, 255, 0.5);
+    color: #00f7ff;
+    background: rgba(0, 247, 255, 0.05);
+}
+
+.secondary-btn:hover {
+    background: rgba(0, 247, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 247, 255, 0.3);
+    border-radius: 50%;
+
+    text-decoration: none;
+    font-size: 19px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) rotate(5deg);
+
+    border-color: #00f7ff;
+
+    box-shadow:
+        0 0 15px rgba(0, 247, 255, 0.5);
+
+    background: rgba(0, 247, 255, 0.1);
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.hero-image {
+    width: 430px;
+    height: 430px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+.profile-frame {
+    width: 330px;
+    height: 330px;
+
+    padding: 8px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #00f7ff,
+        #008cff,
+        #8a2be2,
+        #00f7ff
+    );
+
+    background-size: 300% 300%;
+
+    animation:
+        gradientRotate 5s ease infinite,
+        floating 4s ease-in-out infinite;
+
+    box-shadow:
+        0 0 30px rgba(0, 247, 255, 0.4),
+        0 0 80px rgba(0, 140, 255, 0.25);
+
+    position: relative;
+    z-index: 2;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+    border: 5px solid #050b13;
+}
+
+
+/* =========================================
+   IMAGE GLOW
+========================================= */
+
+.image-glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #00f7ff;
+
+    filter: blur(100px);
+
+    opacity: 0.15;
+
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   FLOATING CARDS
+========================================= */
+
+.floating-card {
+    position: absolute;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    background: rgba(10, 20, 35, 0.75);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0, 247, 255, 0.3);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 0 20px rgba(0, 247, 255, 0.15);
+
+    z-index: 4;
+
+    white-space: nowrap;
+}
+
+.card-one {
+    top: 50px;
+    left: 0;
+
+    animation: floatingCard 3s ease-in-out infinite;
+}
+
+.card-two {
+    right: -10px;
+    top: 150px;
+
+    animation: floatingCard 4s ease-in-out infinite;
+}
+
+.card-three {
+    bottom: 45px;
+    left: 20px;
+
+    animation: floatingCard 3.5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes heroText {
+
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes gradientRotate {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+@keyframes floatingCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        opacity: 0.12;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 0.25;
+        transform: scale(1.1);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+
+        padding-top: 130px;
+
+        gap: 50px;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text h1 {
+        font-size: 75px;
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 330px;
+        height: 330px;
+    }
+
+    .profile-frame {
+        width: 250px;
+        height: 250px;
+    }
+
+    .image-glow {
+        width: 250px;
+        height: 250px;
+    }
+
+    .floating-card {
+        font-size: 11px;
+        padding: 9px 12px;
+    }
+
+    .card-one {
+        left: -10px;
+    }
+
+    .card-two {
+        right: -20px;
+    }
+
+    .card-three {
+        left: 0;
+    }
+
+}
+}
